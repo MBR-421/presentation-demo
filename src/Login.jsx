@@ -40,6 +40,12 @@ export default function Login() {
         >
           Continue with Microsoft
         </button>
+        <button
+  onClick={() => navigate('/app?demo=true')}
+  className="mt-3 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-500 text-sm hover:shadow transition"
+>
+  View demo (no login required)
+</button>
       </motion.div>
     </div>
   );
