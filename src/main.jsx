@@ -11,7 +11,12 @@ rootEl.innerHTML = '<div style="padding:16px;font-family:system-ui">Loading…</
 
 (async () => {
   await msalInstance.initialize();
-  await msalInstance.handleRedirectPromise();
+  
+  try {
+    await msalInstance.handleRedirectPromise();
+  } catch (e) {
+    console.warn("MSAL redirect error (safe to ignore in demo):", e);
+  }
 
   const accounts = msalInstance.getAllAccounts();
   if (accounts.length > 0 && !msalInstance.getActiveAccount()) {
